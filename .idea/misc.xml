@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/drawable/ic_splashscreen.xml" value="0.2703125" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/drawable/splashscreen (1).xml" value="0.2703125" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/drawable/splashscreen.xml" value="0.2703125" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/layout/about.xml" value="0.1453804347826087" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/layout/activity_about.xml" value="0.2" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/layout/activity_food_list.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/layout/activity_next.xml" value="0.13858695652173914" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/layout/activity_splashscreen.xml" value="0.13858695652173914" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/layout/detailform.xml" value="0.264" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/layout/foodlist.xml" value="0.11614583333333334" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/layout/main.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/layout/row.xml" value="0.1644021739130435" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/menu/option.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/eklas/AndroidStudioProjects/P2002327_Assign/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

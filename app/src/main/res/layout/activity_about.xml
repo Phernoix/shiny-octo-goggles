@@ -20,7 +20,7 @@
             android:layout_marginTop="20sp"
             android:foregroundGravity="center"
             android:gravity="center"
-            android:text="App By Erwin Klaseboer"
+            android:text="App By Erwin Klaseboer "
             android:textSize="30dp" />
 
         <TextView
@@ -28,9 +28,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="P2002327"
-            android:textSize="30dp"
-            android:layout_marginTop="20sp"/>
+            android:layout_marginTop="20sp"
+            android:text="DCPE/FT/2B/02 P2002327"
+            android:textSize="30dp" />
 
         <TextView
             android:id="@+id/textView5"
@@ -59,13 +59,25 @@
             android:layout_marginTop="20sp"
             app:srcCompat="@drawable/telegram" />
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:onClick="phoneMsg"
+            android:layout_width="75sp"
+            android:layout_height="75sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20sp"
+            app:srcCompat="@drawable/phone" />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+
             android:layout_marginTop="20sp"
-            android:textSize="18sp"
-            android:text="This app is to essentially rate all the food that I have eaten each day and count the amount of calories as well. This allows me to keep track of what I am eating and allows me to eat in moderation" />
+            android:layout_marginRight="10sp"
+            android:text="This app is to essentially rate all the food that I have eaten each day and count the amount of calories as well. This allows me to keep track of what I am eating and allows me to eat in moderation"
+            android:textSize="18sp" />
 
     </LinearLayout>
 

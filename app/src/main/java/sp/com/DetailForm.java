@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,8 @@ public class DetailForm extends AppCompatActivity {
     private String foodID = "";
     private static final int CHOOSE_IMAGE = 123;
     private byte[] byteImage;
+    private EditText foodCalories;
+    private RadioGroup foodTimes;
 
     /*private TextView location =null;
     private GPSTracker gpsTracker;
@@ -59,6 +62,8 @@ public class DetailForm extends AppCompatActivity {
         buttonAdd = findViewById(R.id.button_add);
         buttonAdd.setOnClickListener(onAdd);
         foodImage = findViewById(R.id.foodImage);
+        foodCalories=findViewById(R.id.food_calories);
+        foodTimes =findViewById(R.id.food_times);
 
         buttonSave = findViewById(R.id.button_save);
         buttonSave.setOnClickListener(onSave);
@@ -119,6 +124,14 @@ public class DetailForm extends AppCompatActivity {
         foodRating.getRating();
         foodName.setText(helper.getFoodName(c));
         foodDescription.setText(helper.getFoodDescription(c));
+        foodCalories.setText(helper.getFoodCalories(c));
+        if (helper.getFoodTimes(c).equals("Breakfast")){
+            foodTimes.check(R.id.breakfast);
+        }else if (helper.getFoodTimes(c).equals("Lunch")){
+            foodTimes.check(R.id.lunch);
+        }else if (helper.getFoodTimes(c).equals("Dinner")){
+            foodTimes.check(R.id.dinner);
+        }
     }
 
     private View.OnClickListener onSave = new View.OnClickListener() {
@@ -127,11 +140,25 @@ public class DetailForm extends AppCompatActivity {
             float rating = foodRating.getRating();
             String nameStr = foodName.getText().toString();
             String descStr = foodDescription.getText().toString();
+            String caloStr = foodCalories.getText().toString();
+
+            String fooTime = "";
+            switch(foodTimes.getCheckedRadioButtonId()){
+                case R.id.breakfast:
+                    fooTime ="Breakfast";
+                    break;
+                case R.id.lunch:
+                    fooTime ="Lunch";
+                    break;
+                case R.id.dinner:
+                    fooTime ="Dinner";
+                    break;
+            }
 
             if (byteImage != null) {
-                helper.insert(rating, nameStr, descStr, byteImage);
+                helper.insert(rating, nameStr, descStr, byteImage, caloStr,fooTime);
             }else if (byteImage == null){
-                helper.insertNoImage(rating, nameStr, descStr);
+                helper.insertNoImage(rating, nameStr, descStr,caloStr,fooTime);
             }
             Intent intent = new Intent(DetailForm.this, FoodList.class);
             startActivity(intent);

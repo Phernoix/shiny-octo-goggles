@@ -106,19 +106,24 @@ public class FoodList extends AppCompatActivity {
         private TextView foodDesc ;
         private ImageView foodImage;
         private TextView foodRating;
+        private TextView foodCalories;
+        private TextView foodTimes;
 
         FoodHolder(View row) {
             foodRating = row.findViewById(R.id.rating);
             foodName = row.findViewById(R.id.foodName);
             foodDesc = row.findViewById(R.id.foodDesc);
             foodImage = row.findViewById(R.id.imageview);
-            foodRating.setText("Test");
+            foodCalories = row.findViewById(R.id.foodCal);
+            foodTimes =row.findViewById(R.id.foodTimes);
         }
 
         void populateFrom(Cursor c, FoodHelper helper) {
             foodRating.setText("Rating: " + helper.getFoodRating(c) + "stars");
             foodName.setText("Name: " + helper.getFoodName(c));
             foodDesc.setText("Description: " + helper.getFoodDescription(c));
+            foodCalories.setText("Calories: " + helper.getFoodCalories(c)+ " kcal");
+            foodTimes.setText("Time of Meal: "+ helper.getFoodTimes(c));
 
             byte[] ImageByte = helper.getFoodImage(c);
             if (ImageByte != null) {

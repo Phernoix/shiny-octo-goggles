@@ -27,4 +27,8 @@ public class About extends AppCompatActivity {
 
         }
     }
+    public void phoneMsg(View view){
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "+6594760130"));
+        startActivity(intent);
+    }
 }

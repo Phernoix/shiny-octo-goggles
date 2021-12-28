@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class FoodHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "foodlist.db";
+    private static final String DATABASE_NAME = "foodlist1.db";
     private static final int SCHEME_VERSION = 1;
 
     public FoodHelper(Context context) {
@@ -16,7 +16,7 @@ public class FoodHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE food_table(_id INTEGER PRIMARY KEY AUTOINCREMENT,foodRating REAL, foodName TEXT , foodDescription TEXT, foodImage);");
+        db.execSQL("CREATE TABLE food_table(_id INTEGER PRIMARY KEY AUTOINCREMENT,foodRating REAL, foodName TEXT , foodDescription TEXT, foodImage, foodCalories TEXT, foodTimes TEXT);");
 
     }
 
@@ -26,7 +26,7 @@ public class FoodHelper extends SQLiteOpenHelper {
 
     public Cursor getAll() {
         return (getReadableDatabase().rawQuery(
-                "SELECT _id, foodRating, foodName, foodDescription,foodImage FROM food_table ORDER BY foodName", null));
+                "SELECT _id, foodRating, foodName, foodDescription,foodImage, foodCalories, foodTimes  FROM food_table ORDER BY foodName", null));
 
     }
 
@@ -35,38 +35,44 @@ public class FoodHelper extends SQLiteOpenHelper {
 
         return (getReadableDatabase().rawQuery(
                 "SELECT _id, foodRating, foodName, foodDescription," +
-                        "foodImage FROM food_table WHERE _ID=?", args));
+                        "foodImage, foodCalories, foodTimes FROM food_table WHERE _ID=?", args));
 
     }
 
-    public void insert(Float foodRating, String foodName, String foodDescription, byte[] foodImage) {
+    public void insert(Float foodRating, String foodName, String foodDescription, byte[] foodImage, String foodCalories,String foodTimes) {
         ContentValues cv = new ContentValues();
 
         cv.put("foodRating", foodRating);
         cv.put("foodName", foodName);
         cv.put("foodDescription", foodDescription);
         cv.put("foodImage", foodImage);
+        cv.put("foodCalories",foodCalories);
+        cv.put("foodTimes",foodTimes);
 
         getWritableDatabase().insert("food_table", "foodName", cv);
 
     }
 
-    public void insertNoImage(Float foodRating, String foodName, String foodDescription) {
+    public void insertNoImage(Float foodRating, String foodName, String foodDescription, String foodCalories, String foodTimes) {
         ContentValues cv = new ContentValues();
         cv.put("foodRating", foodRating);
         cv.put("foodName", foodName);
         cv.put("foodDescription", foodDescription);
+        cv.put("foodCalories",foodCalories);
+        cv.put("foodTimes",foodTimes);
 
         getWritableDatabase().insert("food_table", "foodName", cv);
 
     }
 
-    public void update(String id, Float foodRating, String foodName, String foodDescription) {
+    public void update(String id, Float foodRating, String foodName, String foodDescription,String foodCalories, String foodTimes) {
         ContentValues cv = new ContentValues();
         String[] args = {id};
         cv.put("foodRating", foodRating);
         cv.put("foodName", foodName);
         cv.put("foodDescription", foodDescription);
+        cv.put("foodCalories",foodCalories);
+        cv.put("foodTimes",foodTimes);
 
         getWritableDatabase().update("food_table", cv, "_ID=?", args);
     }
@@ -90,5 +96,9 @@ public class FoodHelper extends SQLiteOpenHelper {
     public byte[] getFoodImage(Cursor c) {
         return (c.getBlob(4));
     }
+    public String getFoodCalories(Cursor c) {
+        return (c.getString(5));
+    }
+    public String getFoodTimes(Cursor c){return (c.getString(6));}
 
 }
